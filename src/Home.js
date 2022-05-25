@@ -41,10 +41,19 @@ const Home=()=>{
     })
   }
 
+  const removeTask=(id)=>{
+    // alert(id);
+    
+    setTasks((oldTasks)=>{
+      const filteredTasks = oldTasks.filter((task)=>task.id!==id)
+      return filteredTasks;
+    })
+  }
+
   return (
     <div>
       <NewTask addTask={addTask} />
-      <ToDoList tasks = {tasks}/>
+      <ToDoList tasks = {tasks} removeTask={removeTask} />
     </div>
   )
 }

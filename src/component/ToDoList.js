@@ -7,7 +7,7 @@ function ToDoList(props) {
     <section>
         List Area
         {
-            props.tasks.map((task)=> <Task key={task.id} task={task} />)
+            props.tasks.map((task)=> <Task key={task.id} task={task}  removeTask={props.removeTask} />)
         }
     </section>
   )
